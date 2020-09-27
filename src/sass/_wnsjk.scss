@@ -85,198 +85,69 @@ html {
                 color: #ff9500;
             }
         }
-    }
-    // 蜗牛手机卡套餐
-    .wnsjk_setmeal {
-        width: $mainwidth;
-        height: 360px;
-        margin-top: 16px;
-        position: relative;
-        overflow: hidden;
-        @include background-color(#f7f7f7);
-        // 蜗牛网红卡
-        .wn_influencer {
+        // 蜗牛手机卡左
+        .wnsjk_left {
             width: 227px;
             height: 360px;
+            border: $n;
             float: left;
             margin-right: 16px;
-            text-align: center;
-            @include background-color(#fff);
+            @include display(inline);
+            img {
+                font-size: 100%;
+                cursor: pointer;
+            }
         }
-        // 蜗牛无限卡
-        .infinite {
-            width: 225px;
-            height: 358px;
+        // 蜗牛手机卡右
+        .wnsjk_right {
+            width: 957px;
+            height: 360px;
             float: left;
-            margin-right: 16px;
-            @include borderstyle(1px, solid, #fff);
-            text-align: center;
-            @include background-color(#fff);
-            .infinite_name {
-                font-size: 16px;
-                color: #333;
-                text-align: left;
-                margin-top: 30px;
-                margin-bottom: 8px;
-                margin-left: 30px;
-                line-height: 1;
+            .wn_simcard:nth-of-type(4) {
+                margin-right: 0;
             }
-            .infinite_content {
-                font-size: 14px;
-                color: #999;
-                line-height: 1;
-                margin-bottom: 8px;
-                text-align: left;
-                margin-left: 30px;
+            .wn_simcard {
+                width: 225px;
+                height: 358px;
+                float: left;
+                margin-right: 16px;
+                @include borderstyle(1px, solid, #fff);
+                @include background-color(#fff);
+                .simcard_name {
+                    font-size: 16px;
+                    color: #333;
+                    text-align: left;
+                    margin: 30px 0 8px 30px;
+                    line-height: 1;
+                }
+                .simcard_intro {
+                    font-size: 14px;
+                    color: #999;
+                    line-height: 1;
+                    text-align: left;
+                    margin: 0 0 8px 30px;
+                }
+                .simcard_price {
+                    font-size: 14px;
+                    color: #f86a00;
+                    text-align: left;
+                    line-height: 1;
+                    margin: 0 0 60px 30px;
+                }
+                .simcard_img {
+                    width: 227px;
+                    height: 190px;
+                    text-align: center;
+                    img {
+                        width: 197px;
+                        height: 190px;
+                    }
+                }
             }
-            .infinite_price {
-                font-size: 14px;
-                color: #f86a00;
-                text-align: left;
-                margin-left: 30px;
-                margin-bottom: 60px;
-                line-height: 1;
+            .wn_simcard:hover {
+                border-color: #ff9500;
+                cursor: pointer;
             }
-            .infinite_img {
-                width: 197px;
-                height: 190px;
-                @include display(inline);
-            }
-        }
-        .infinite:hover {
-            border-color: #ff9500;
-            cursor: pointer;
-        }
-        // 网红卡
-        .influencer {
-            width: 225px;
-            height: 358px;
-            float: left;
-            margin-right: 16px;
-            @include borderstyle(1px, solid, #fff);
-            text-align: center;
-            @include background-color(#fff);
-            .influencer_name {
-                font-size: 16px;
-                color: #333;
-                text-align: left;
-                margin-top: 30px;
-                margin-bottom: 8px;
-                margin-left: 30px;
-                line-height: 1;
-            }
-            .influencer_content {
-                font-size: 14px;
-                color: #999;
-                line-height: 1;
-                margin-bottom: 8px;
-                text-align: left;
-                margin-left: 30px;
-            }
-            .influencer_price {
-                font-size: 14px;
-                color: #f86a00;
-                text-align: left;
-                margin-left: 30px;
-                margin-bottom: 45px;
-                line-height: 1;
-            }
-            .influencer_img {
-                width: 197px;
-                height: 190px;
-                @include display(inline);
-            }
-        }
-        .influencer:hover {
-            border-color: #ff9500;
-            cursor: pointer;
-        }
-        // 畅玩12免卡
-        .twelve {
-            width: 225px;
-            height: 358px;
-            float: left;
-            margin-right: 16px;
-            @include borderstyle(1px, solid, #fff);
-            text-align: center;
-            @include background-color(#fff);
-            .twelve_name {
-                font-size: 16px;
-                color: #333;
-                text-align: left;
-                margin-top: 30px;
-                margin-bottom: 8px;
-                margin-left: 30px;
-                line-height: 1;
-            }
-            .twelve_content {
-                font-size: 14px;
-                color: #999;
-                line-height: 1;
-                margin-bottom: 8px;
-                text-align: left;
-                margin-left: 30px;
-            }
-            .twelve_price {
-                font-size: 14px;
-                color: #f86a00;
-                text-align: left;
-                margin-left: 30px;
-                margin-bottom: 45px;
-                line-height: 1;
-            }
-            .twelve_img {
-                width: 197px;
-                height: 190px;
-                @include display(inline);
-            }
-        }
-        .twelve:hover {
-            border-color: #ff9500;
-            cursor: pointer;
-        }
-        // 蜗牛神通卡
-        .deity {
-            width: 225px;
-            height: 358px;
-            float: left;
-            @include borderstyle(1px, solid, #fff);
-            text-align: center;
-            @include background-color(#fff);
-            .deity_name {
-                font-size: 16px;
-                color: #333;
-                text-align: left;
-                margin-top: 30px;
-                margin-bottom: 8px;
-                margin-left: 30px;
-                line-height: 1;
-            }
-            .deity_content {
-                font-size: 14px;
-                color: #999;
-                line-height: 1;
-                margin-bottom: 8px;
-                text-align: left;
-                margin-left: 30px;
-            }
-            .deity_price {
-                font-size: 14px;
-                color: #f86a00;
-                text-align: left;
-                margin-left: 30px;
-                margin-bottom: 60px;
-                line-height: 1;
-            }
-            .deity_img {
-                width: 197px;
-                height: 190px;
-                @include display(inline);
-            }
-        }
-        .deity:hover {
-            border-color: #ff9500;
-            cursor: pointer;
         }
     }
 }

@@ -52,6 +52,8 @@ html {
         @include display($f);
         @include background-color(#323436);
         flex-direction: row;
+        position: relative;
+        z-index: 110;
         // 顶部主部分
         .main_topbar {
             width: $mainwidth;
@@ -60,6 +62,8 @@ html {
             @include display($f);
             margin: 0 auto;
             flex-direction: row;
+            position: relative;
+            z-index: 110;
             // 主部分左
             .topbar_left {
                 @include display($f);
@@ -129,6 +133,8 @@ html {
                 @include display($f);
                 flex-direction: row;
                 padding-left: 110px;
+                // position: absolute;
+                // z-index: 1;
                 li {
                     width: 140px;
                     height: 100px;
@@ -139,6 +145,51 @@ html {
                 }
                 li:hover {
                     cursor: pointer;
+                    color: #ff7f00;
+                }
+                // li:nth-of-type(3):hover .topyc {
+                // @include display($b);
+                // transform: translateY(144px);
+                // z-index: 0;
+                // }
+            }
+        }
+    }
+    // 隐藏导航栏
+    .topyc {
+        width: $bigwidth;
+        @include background-color(#fff);
+        @include borderstyle(1px, solid, #dedede);
+        padding: 30px 0 26px;
+        @include positionleft(absolute, 0, -40px);
+        @include display($n);
+        // transform: translateY(-144px);
+        // transition: 1s;
+        // z-index: 1;
+        ul {
+            width: $mainwidth;
+            margin: 0 auto;
+            position: relative;
+            z-index: 111;
+            padding-left: 100px;
+            li {
+                float: left;
+                margin-right: 70px;
+                #{$l-s}: $n;
+                a {
+                    #{$t-d}: $n;
+                    color: #333;
+                    img {
+                        width: 100px;
+                        height: 100px;
+                        @include display($b);
+                        .name {
+                            font-size: 14px;
+                            line-height: 1;
+                            margin-top: 10px;
+                            text-align: center;
+                        }
+                    }
                 }
             }
         }
