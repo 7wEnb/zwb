@@ -53,7 +53,6 @@ html {
         @include background-color(#323436);
         flex-direction: row;
         position: relative;
-        z-index: 110;
         // 顶部主部分
         .main_topbar {
             width: $mainwidth;
@@ -63,7 +62,6 @@ html {
             margin: 0 auto;
             flex-direction: row;
             position: relative;
-            z-index: 110;
             // 主部分左
             .topbar_left {
                 @include display($f);
@@ -71,7 +69,7 @@ html {
                 a {
                     #{$t-d}: $n;
                     color: #989898;
-                    padding: 0 19px;
+                    padding: 0 18px;
                 }
                 a:hover {
                     color: white;
@@ -99,6 +97,35 @@ html {
                     span {
                         color: orange;
                     }
+                }
+                // 隐藏购物车内容
+                .yc_cart {
+                    width: 308px;
+                    height: 99px;
+                    @include borderstyle(1px, solid, #ff9500);
+                    border-top: 0;
+                    position: absolute;
+                    top: 44px;
+                    right: 15px;
+                    @include background-color(#fff);
+                    color: #333;
+                    font-size: 14px;
+                    line-height: 99px;
+                    text-align: center;
+                    @include display($n);
+                    a {
+                        color: #ffa012;
+                        #{$t-d}: $n;
+                    }
+                }
+            }
+            .topbar_right:hover {
+                border: 1px solid #ff9500;
+                border-bottom: 0;
+                @include background-color(#fff);
+                color: #333;
+                .yc_cart {
+                    @include display($b);
                 }
             }
         }
@@ -133,8 +160,6 @@ html {
                 @include display($f);
                 flex-direction: row;
                 padding-left: 110px;
-                // position: absolute;
-                // z-index: 1;
                 li {
                     width: 140px;
                     height: 100px;
@@ -147,11 +172,6 @@ html {
                     cursor: pointer;
                     color: #ff7f00;
                 }
-                // li:nth-of-type(3):hover .topyc {
-                // @include display($b);
-                // transform: translateY(144px);
-                // z-index: 0;
-                // }
             }
         }
     }
@@ -161,11 +181,9 @@ html {
         @include background-color(#fff);
         @include borderstyle(1px, solid, #dedede);
         padding: 30px 0 26px;
-        @include positionleft(absolute, 0, -40px);
+        @include positionleft(absolute, 0, 144px);
         @include display($n);
-        // transform: translateY(-144px);
-        // transition: 1s;
-        // z-index: 1;
+        z-index: 1;
         ul {
             width: $mainwidth;
             margin: 0 auto;

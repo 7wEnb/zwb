@@ -41,6 +41,7 @@
     height: 430px;
     @include background-color(#f7f7f7);
     margin: 0 auto;
+    z-index: -5555;
     // 广告二级菜单
     .main_banner {
         width: $mainwidth;
@@ -199,12 +200,15 @@
         overflow: hidden;
         position: relative;
         ul {
-            width: 4850px;
             height: 430px;
-            position: relative;
+            position: absolute;
+            left: 0;
+            top: 0;
             li {
                 float: left;
                 #{$l-s}: $n;
+                width: 970px;
+                height: 430px;
                 img {
                     width: 970px;
                     height: 430px;
@@ -254,7 +258,7 @@
                 background: url(../img/图片3.png)no-repeat;
                 background-position: 0 -41px;
             }
-            a:hover {
+            .select {
                 background-position: 0 -83px;
             }
         }

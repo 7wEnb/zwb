@@ -1,40 +1,43 @@
 @charset "utf-8";
-// $bigwidth:100%;
-// $mainwidth:1200px; //主内容宽
-// $l-s:list-style; //去除列表符号
-// $n:none;
-// $b:block;
-// $f:flex; //设置弹性盒
-// $t-d:text-decoration; //去除a标签下划线
-// $j-c:justify-content; //主轴的对齐方式
-// $a-i:align-items; //侧轴的对齐方式
-// $a-c:align-content; //行与行的排列方式
-// @mixin display($value) {
-//     display: $value;
-// }
-// @mixin background-color ($value) {
-//     background-color: $value;
-// } //设置背景颜色
-// @mixin borderstyle($style, $size, $color) {
-//     border: $style $size $color;
-// } //设置边框样式
-// @mixin positionleft($value, $left, $top) {
-//     position: $value;
-//     left: $left;
-//     top: $top;
-// } //定位左上
-// @mixin positionright($value, $right, $bottom) {
-//     position: $value;
-//     right: $right;
-//     bottom: $bottom;
-// } //定位右下
-// * {
-//     margin: 0;
-//     padding: 0;
-// }
-// html {
-//     position: relative;
-// }
+$bigwidth:100%;
+$mainwidth:1200px; //主内容宽
+$l-s:list-style; //去除列表符号
+$n:none;
+$b:block;
+$f:flex; //设置弹性盒
+$t-d:text-decoration; //去除a标签下划线
+$j-c:justify-content; //主轴的对齐方式
+$a-i:align-items; //侧轴的对齐方式
+$a-c:align-content; //行与行的排列方式
+@mixin display($value) {
+    display: $value;
+}
+
+@mixin background-color ($value) {
+    background-color: $value;
+} //设置背景颜色
+@mixin borderstyle($style, $size, $color) {
+    border: $style $size $color;
+} //设置边框样式
+@mixin positionleft($value, $left, $top) {
+    position: $value;
+    left: $left;
+    top: $top;
+} //定位左上
+@mixin positionright($value, $right, $bottom) {
+    position: $value;
+    right: $right;
+    bottom: $bottom;
+} //定位右下
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    position: relative;
+}
+
 // 游戏道具
 .yxdj {
     width: $bigwidth;
@@ -64,7 +67,7 @@
             @include borderstyle(1px, solid, #e0e0e0);
             position: relative;
             font-size: 100%;
-            .boy {
+            div {
                 width: 208px;
                 height: 58px;
                 position: absolute;
@@ -87,38 +90,12 @@
                         margin-top: 3px;
                     }
                 }
-                .bottom {
-                    height: 2px;
-                    width: 100%;
-                    position: absolute;
-                    left: 0;
-                    bottom: -1px;
-                    background: #ff9501;
-                }
             }
-            .girl {
+            .bot {
+                border-bottom: 2px solid #ff9501;
+            }
+            div:nth-of-type(2) {
                 @include positionleft(absolute, 208px, 0);
-                float: left;
-                width: 208px;
-                text-align: center;
-                a {
-                    #{$t-d}: $n;
-                    @include display($b);
-                    text-align: center;
-                    height: 58px;
-                    line-height: 58px;
-                    span {
-                        font-size: 16px;
-                        color: #333;
-                        vertical-align: top;
-                    }
-                    img {
-                        width: 40px;
-                        margin-right: 15px;
-                        @include display(inline);
-                        margin-top: 3px;
-                    }
-                }
             }
         }
         // 九阴真经道具
@@ -128,8 +105,8 @@
             margin-top: 16px;
             position: relative;
             overflow: hidden;
-            //骆驼
-            .camel {
+            //图一
+            .FIG {
                 width: 227px;
                 height: 360px;
                 float: left;
@@ -138,8 +115,8 @@
                 cursor: pointer;
                 @include background-color(#fff);
             }
-            //逐月销金袍
-            .robe {
+            //道具列表
+            .itemslist {
                 float: left;
                 margin-right: 16px;
                 width: 225px;
@@ -148,7 +125,7 @@
                 text-align: center;
                 @include background-color(#fff);
                 cursor: pointer;
-                .robe_name {
+                .itemslist_name {
                     font-size: 16px;
                     color: #333;
                     text-align: left;
@@ -157,7 +134,7 @@
                     margin-left: 30px;
                     line-height: 1;
                 }
-                .robe_price {
+                .itemslist_price {
                     font-size: 14px;
                     color: #f86a00;
                     text-align: left;
@@ -165,7 +142,7 @@
                     margin-left: 30px;
                     line-height: 1;
                 }
-                .robe_img {
+                .itemslist_img {
                     width: 200px;
                     height: 185px;
                     margin: 0 auto;
@@ -176,129 +153,24 @@
                     }
                 }
             }
-            .robe:hover {
+            .itemslist:hover {
                 border-color: #ff9500;
             }
-            //百战血披·披
-            .derived {
-                float: left;
-                margin-right: 16px;
-                width: 225px;
-                height: 358px;
-                @include borderstyle(1px, solid, #fff);
-                text-align: center;
-                @include background-color(#fff);
-                cursor: pointer;
-                .derived_name {
-                    font-size: 16px;
-                    color: #333;
-                    text-align: left;
-                    margin-top: 30px;
-                    margin-bottom: 10px;
-                    margin-left: 30px;
-                    line-height: 1;
-                }
-                .derived_price {
-                    font-size: 14px;
-                    color: #f86a00;
-                    text-align: left;
-                    margin-bottom: 80px;
-                    margin-left: 30px;
-                    line-height: 1;
-                }
-                .derived_img {
-                    width: 200px;
-                    height: 180px;
-                    margin: 0 auto;
-                    overflow: hidden;
-                    img {
-                        width: 200px;
-                        height: 180px;
-                    }
-                }
-            }
-            .derived:hover {
-                border-color: #ff9500;
-            }
-            //四象双剑鞘
-            .doublesheath {
-                float: left;
-                margin-right: 16px;
-                width: 225px;
-                height: 358px;
-                @include borderstyle(1px, solid, #fff);
-                text-align: center;
-                @include background-color(#fff);
-                cursor: pointer;
-                .doublesheath_name {
-                    font-size: 16px;
-                    color: #333;
-                    text-align: left;
-                    margin-top: 30px;
-                    margin-bottom: 10px;
-                    margin-left: 30px;
-                    line-height: 1;
-                }
-                .doublesheath_price {
-                    font-size: 14px;
-                    color: #f86a00;
-                    text-align: left;
-                    margin-bottom: 80px;
-                    margin-left: 30px;
-                    line-height: 1;
-                }
-                .doublesheath_img {
-                    width: 200px;
-                    height: 180px;
-                    margin: 0 auto;
-                    overflow: hidden;
-                    img {
-                        width: 200px;
-                        height: 180px;
-                    }
-                }
-            }
-            .doublesheath:hover {
-                border-color: #ff9500;
-            }
-            //四象剑鞘
-            .sheath {
-                float: left;
-                width: 225px;
+            .itemslist:nth-of-type(5),
+            .itemslist:nth-of-type(8) {
                 height: 222px;
-                @include borderstyle(1px, solid, #fff);
-                text-align: center;
-                @include background-color(#fff);
-                cursor: pointer;
-                .sheath_name {
-                    font-size: 16px;
-                    color: #333;
-                    text-align: left;
-                    margin-top: 30px;
-                    margin-bottom: 10px;
-                    margin-left: 30px;
-                    line-height: 1;
+                margin-right: 0;
+                .itemslist_price {
+                    margin-bottom: 0px;
                 }
-                .sheath_price {
-                    font-size: 14px;
-                    color: #f86a00;
-                    text-align: left;
-                    margin-left: 30px;
-                    line-height: 1;
-                }
-                .sheath_img {
+                .itemslist_img {
                     width: 145px;
                     height: 145px;
-                    margin: 0 auto;
-                    overflow: hidden;
                     img {
                         width: 145px;
                         height: 145px;
                     }
                 }
-            }
-            .sheath:hover {
-                border-color: #ff9500;
             }
             // 查看全部
             .lookall {
